@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+
     <!-- bootstrap files -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script defer src="./script/db.js"></script>
+    <script defer src="script.js"></script>    
+    <script defer src="./script/template.js"></script>
     <link rel="shortcut icon" href="assets/icon/icon.png" type="image/png">
     <title>Quiz App</title>
 
 </head>
 
-<body>
+<body onload="init()" class="d-flex justify-content-center align-items-center vh-100">
+    <main class="d-flex" style="height: 450px">
+        <aside class="bg-menu container rounded-start-4" style="width: 12rem;">
+            <img src="./assets/icon/logo.png" class="card-img-top pt-3 px-4 pb-5" alt="QuizApp Logo">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-menu text-white">HTML</li>
+                <li class="list-group-item bg-menu text-white">CSS</li>
+                <li class="list-group-item bg-menu text-white">JS</li>
+                <li class="list-group-item bg-menu text-white mb-5">Java</li>
+            </ul>
+        </aside>
+        
+        <article id="quiz" class="card rounded-start-0 rounded-end-4" style="width: 28rem; height:100%;">
+        </article>
 
-    Test Test
+
+    </main>
 
 
 </body>
+
 </html>

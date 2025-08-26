@@ -1,0 +1,41 @@
+:root {
+    --bg-menu-left: #27355C;
+    --bg-btn-accent-1: #173CE8;
+    --txt-score-accent: #FD4F10;
+    --bg-quiz-accent-correct1: #4DBF19;
+    --bg-quiz-accent-correct2: #B7F699;
+    --bg-quiz-accent-wrong1: #F81817;
+    --bg-quiz-accent-wrong2: #FFA3A4;
+    --bg-quiz-standard1: #D6D6D6;
+    --bg-quiz-standard2: #FFFFFF;
+    --bg-quiz: #F7F7F7;
+}
+
+.lightmode {
+    --bg-menue-left: #173CE8;
+    --bg-btn-accent: #FD4F10;
+    --txt-score-accent: #173CE8;
+    --bg-quiz-end: #F7D5BB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Rubik';
+}
+
+a {
+    text-decoration: none;
+}
+
+.max-width {
+    max-width: 1440px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
