@@ -30,12 +30,6 @@ a {
     text-decoration: none;
 }
 
-.max-width {
-    max-width: 1440px;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.d_none {
+    display: none;
 }

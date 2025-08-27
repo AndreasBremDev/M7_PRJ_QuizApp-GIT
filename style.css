@@ -1,8 +1,23 @@
-.bg-menu {
+.bg-clr-menu {
     background-color: var(--bg-menu-left) !important;
 }
 
 .quiz-answer-card:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+#winning {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+#winning img {
+    height: 10rem;
+}
+.menu_wrapper{
+    flex-direction: row;
 }

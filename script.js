@@ -4,13 +4,33 @@ let counterWrongAnswers = 0;
 
 function init() {
     renderQuestions()
+    
 }
 
 function renderQuestions() {
     let index = currentQuestion
     let quizRef = document.getElementById('quiz');
     quizRef.innerHTML = '';
-    quizRef.innerHTML = getQuestionsHtml(index);
+    if (index == questions.length) {
+        progressBarUpdate();
+        quizRef.innerHTML = getFinalResultsHtml(index);
+        if (counterRightAnswers === questions.length) {
+            document.getElementById('winning').classList.remove('d_none');
+        }
+    } else {
+        progressBarUpdate();
+        quizRef.innerHTML = getQuestionsHtml(index);
+    }
+}
+
+function progressBarUpdate(){
+    let percent = parseInt(currentQuestion / questions.length * 100)
+    let progressBarRef = document.getElementById('progress');
+    progressBarRef.innerHTML = '';
+    progressBarRef.innerHTML = percent + " %"
+    progressBarRef.style = `width: ${percent}%`
+    
+
 }
 
 function answer(selection) {
@@ -28,8 +48,16 @@ function answer(selection) {
     document.getElementById('nextBtn').disabled = false;
 }
 
-function nextQuestion(){
+function nextQuestion() {
     currentQuestion++;
     document.getElementById('nextBtn').disabled = true;
     renderQuestions();
+}
+
+function restartQuiz(){
+    currentQuestion = 0;
+    counterRightAnswers = 0;
+    counterWrongAnswers = 0;
+    document.getElementById('winning').classList.add('d_none')
+    init();
 }
