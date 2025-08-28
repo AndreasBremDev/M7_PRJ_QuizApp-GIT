@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startQuiz() {
+    currentQuestion = 0;
     updateProgressBar();
     quizRef.classList.add('bg_img')
     quizRef.innerHTML = '';
