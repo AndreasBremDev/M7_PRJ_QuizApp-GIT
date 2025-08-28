@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startQuiz() {
-    currentQuestion = 0;
+    resetCounters();
+    document.getElementById('winning').classList.add('d_none')
     updateProgressBar();
     quizRef.classList.add('bg_img')
     quizRef.innerHTML = '';
@@ -22,7 +23,7 @@ function startQuiz() {
 
 function renderQuestions() {
     quizRef.classList.remove('bg_img');
-    let index = currentQuestion;    
+    let index = currentQuestion;
     quizRef.innerHTML = '';
     if (gameIsOver(index)) {
         showEndScreen(index);
@@ -32,7 +33,7 @@ function renderQuestions() {
     }
 }
 
-function gameIsOver(index){
+function gameIsOver(index) {
     return index == questions.length;
 }
 
@@ -45,6 +46,7 @@ function showEndScreen(index) {
     quizRef.innerHTML = getFinalResultsHtml(index);
     if (counterRightAnswers === questions.length) {
         document.getElementById('winning').classList.remove('d_none');
+        audio_win.volume = 0.2;
         audio_win.play();
     }
 }
@@ -73,7 +75,7 @@ function rightAnswer(selection) {
     audio_success.volume = 0.2;
     audio_success.play();
     counterRightAnswers++;
-    
+
 }
 
 function wrongAnswer(selection, idOfRightAnswer) {
@@ -90,10 +92,8 @@ function nextQuestion() {
     renderQuestions();
 }
 
-function restartQuiz() {
+function resetCounters() {
     currentQuestion = 0;
     counterRightAnswers = 0;
     counterWrongAnswers = 0;
-    document.getElementById('winning').classList.add('d_none')
-    startQuiz();
 }
