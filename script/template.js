@@ -42,7 +42,7 @@ function getQuestionsHtml(index){
                 <div>
                 <b>${[index + 1]}</b> von <b id="length">${questions.length}</b> Fragen
                 </div>
-                <button tabindex="0" onclick="nextQuestion()"class="btn btn-primary" disabled id="nextBtn">next \></button>
+                <button id="nextBtn" tabindex="-1" onclick="nextQuestion()"class="btn btn-primary" disabled >next \></button>
             </div>`
 };
 

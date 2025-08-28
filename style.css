@@ -19,6 +19,21 @@
     height: 10rem;
 }
 
+.winning {
+    animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .my_rounded_a {
     border-radius: 1rem 1rem 0 0;
 }
