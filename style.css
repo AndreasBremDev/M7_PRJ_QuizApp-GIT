@@ -18,6 +18,22 @@
 #winning img {
     height: 10rem;
 }
-.menu_wrapper{
-    flex-direction: row;
+
+.my_rounded_a {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.my_rounded_b {
+    border-radius: 0 0 1rem 1rem !important;
+}
+
+.my_absolute_position {
+    top: 80% !important;
+    left: 70% !important;
+    right: 10% !important;
+    translate: -50% -50% !important;
+}
+
+.bg_img {
+    background: url(./assets/img/brainbg.jpg) no-repeat center / cover;
 }

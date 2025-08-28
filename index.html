@@ -4,10 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./styles/general.css">
-    <link rel="stylesheet" href="./styles/fonts.css">
-    <link rel="stylesheet" href="./styles/media.css">
 
     <!-- bootstrap files -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,6 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/media.css">
 
     <script defer src="./script/db.js"></script>
     <script defer src="script.js"></script>
@@ -24,34 +25,41 @@
 
 </head>
 
-<body onload="init()" class="vh-100">
-    <div class="d-flex justify-content-center align-items-center h-100 position-relative" style="border:1px solid red">
-        <nav class="progress rounded-0 position-absolute top-0 w-100" role="progressbar" aria-label="Example with label" aria-valuenow="25"
-            aria-valuemin="0" aria-valuemax="100">
-            <div id="progress" class="progress-bar bg-clr-menu" style="width: 25%">25%</div>
-        </nav>
-        <main class="d-flex flex-column flex-md-row">
-
-            <aside class="bg-clr-menu rounded-start-4 align-items-center " style="width: 12rem; height: 450px;">
-                <img src="./assets/icon/logo.png" class="card-img-top pt-3 px-4 pb-5" alt="QuizApp Logo">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-clr-menu text-white">HTML</li>
-                    <li class="list-group-item bg-clr-menu text-white">CSS</li>
-                    <li class="list-group-item bg-clr-menu text-white">JS</li>
-                    <li class="list-group-item bg-clr-menu text-white mb-5">Java</li>
-                </ul>
-            </aside>
-
-            <article id="quiz" class="card rounded-start-0 rounded-end-4" style="width: 28rem; height:450px;">
-            </article>
-
-        </main>
-
-        <div id="winning" class="d_none">
-            <img src="./assets/img/tropy.png" alt="picture of winner trophy">
-        </div>
+<body onload="" class=" d-flex justify-content-center align-items-center  position-relative vh-100">
+    <div id="progressContainer" class="progress rounded-0 position-absolute top-0 w-100" role="contentinfo" aria-label="Example with label"
+        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="progress" class="progress-bar bg-clr-menu" style="width: 25%">25%</div>
     </div>
+    <main class="container  d-flex flex-column flex-md-row mt-3">
 
+        <aside class="container bg-clr-menu my_rounded_a" aria-label="quiz type selection"  aria-labelledby="quiz header">
+            <img src="./assets/icon/logo.png"
+                class="card-img-top mx-auto py-3 d-flex px-md-4 pb-md-5 object-fit-contain" alt="QuizApp Logo"
+                style="height: 156px;">
+            <nav class="d-flex text-white d-flex flex-md-column justify-content-between align-items-md-between mx-3"
+                style="height: auto;" id="quiz header">
+                <div onclick="startQuiz()" class="p-2 text-md-center" style="cursor: pointer;" role="menu">HTML</div>
+                <div class="vr d-md-none"></div>
+                <hr class="hr d-none d-md-block">
+                <div class="p-2 text-md-center" role="menu" aria-disabled="true" style="color: gray">CSS</div>
+                <div class="vr d-md-none"></div>
+                <hr class="hr d-none d-md-block">
+                <div class="p-2 text-md-center" role="menu" aria-disabled="true" style="color: gray">JS</div>
+                <div class="vr d-md-none"></div>
+                <hr class="hr d-none d-md-block">
+                <div class="p-2 text-md-center" role="menu" aria-disabled="true" style="color: gray">Java</div>
+                </ul>
+            </nav>
+        </aside>
+
+        <article id="quiz" class="container card my_rounded_b w-100  bg_img" style="width: 28rem; height:450px;">
+        </article>
+
+    </main>
+
+    <div id="winning" class="d_none">
+        <img src="./assets/img/tropy.png" alt="picture of winner trophy">
+    </div>
 </body>
 
 </html>

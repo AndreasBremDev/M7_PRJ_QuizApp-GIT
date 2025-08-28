@@ -1,15 +1,24 @@
 let currentQuestion = 0;
 let counterRightAnswers = 0;
 let counterWrongAnswers = 0;
+let quizRef = document.getElementById('quiz');
 
-function init() {
-    renderQuestions()
-    
+document.addEventListener('DOMContentLoaded', () => {
+    startQuiz();
+});
+
+function startQuiz(){
+    progressBarUpdate();
+    quizRef.classList.add('bg_img')
+    quizRef.innerHTML = '';
+    quizRef.innerHTML = getStartQuizHtml();
+    let startBtnRef = document.getElementById('startBtn');
+    startBtnRef.focus();
 }
 
 function renderQuestions() {
     let index = currentQuestion
-    let quizRef = document.getElementById('quiz');
+    quizRef.classList.remove('bg_img')
     quizRef.innerHTML = '';
     if (index == questions.length) {
         progressBarUpdate();
@@ -26,9 +35,11 @@ function renderQuestions() {
 function progressBarUpdate(){
     let percent = parseInt(currentQuestion / questions.length * 100)
     let progressBarRef = document.getElementById('progress');
+    let progressContainer = document.getElementById('progressContainer');
     progressBarRef.innerHTML = '';
-    progressBarRef.innerHTML = percent + " %"
-    progressBarRef.style = `width: ${percent}%`
+    progressBarRef.innerHTML = percent + " %";
+    progressBarRef.style = `width: ${percent}%`;
+    progressContainer.ariaValueNow = percent;
     
 
 }
@@ -59,5 +70,5 @@ function restartQuiz(){
     counterRightAnswers = 0;
     counterWrongAnswers = 0;
     document.getElementById('winning').classList.add('d_none')
-    init();
+    startQuiz();
 }

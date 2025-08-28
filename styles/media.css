@@ -1,3 +1,13 @@
-@media (max-width: 700px){
-    
+@media (min-width: 768px) {
+    .my_rounded_a {
+        border-radius: 1rem 0 0 1rem;
+        width: 256px !important;
+    }
+
+    .my_rounded_b {
+        border-radius: 0 1rem 1rem 0 !important;
+    }
+    .max-w {
+        max-width: 30%;
+    }
 }
